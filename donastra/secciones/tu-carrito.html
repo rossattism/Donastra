@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../css/estilos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Tenor+Sans&display=swap" rel="stylesheet">
+  <title>Donastra - Tu carrito</title>
+</head>
+<body class="carrito-page">
+<header>
+  <div class="container header-container">
+    <div class="logo">
+      <a href="../index.html"><img src="../multimedia/logo.png" alt="Donastra Logo"></a>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="nuestras-donas.html">Nuestras donas</a></li>
+        <li><a href="../index.html">Sobre nosotros</a></li>
+        <li><a href="../index.html">Qué obtenés</a></li>
+        <li><a href="novedades.html">Novedades</a></li>
+        <li><a href="locales.html">Locales</a></li>
+        <li><a href="tu-carrito.html"><img src="../multimedia/carrito.svg" alt="Tu carrito"></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+  <main class="carrito-main">
+    <div class="container">
+      <h2>¡Ya casi conocés tu destino!</h2>
+      <h3>Revisá tu carrito y completá la compra.</h3>
+      
+      <div class="carrito-layout">
+      <!-- Lista de productos -->
+      <section class="carrito-products">
+        <article>
+          <figure>
+            <img src="../multimedia/pistacho.png" alt="Crema de pistacho">
+          </figure>
+          <div>   
+            <h3>Crema de pistacho</h3>
+            <p>Dona horneada rellena de una delicada crema a base de pasta de pistacho natural. Exquisito sabor.<br>~290 kcal.</p>
+            <div class="precio-controles">
+              <p class="precio">$6.100</p>
+              <div class="controles-cantidad">
+                <div><p>-</p></div>
+                <div><p>1</p></div>
+                <div><p>+</p></div>
+              </div>
+            </div> 
+          </div>
+        </article>
+
+        <article>
+          <figure>
+            <img src="../multimedia/frambuesa.png" alt="Delicia de frambuesa">
+          </figure>
+          <div>    
+            <h3>Delicia de frambuesa</h3>
+            <p>Dona de mermelada de frambuesa delicada, elaborada con bayas seleccionadas y azúcar glas. Dulce y con una agradable acidez.<br>~320 kcal.</p>
+            <div class="precio-controles">
+              <p class="precio">$5.200</p>
+              <div class="controles-cantidad">
+                <div><p>-</p></div>
+                <div><p>1</p></div>
+                <div><p>+</p></div>
+              </div>
+            </div>
+          </div>    
+        </article>
+
+        <article>
+          <figure>
+            <img src="../multimedia/combo-espresso2.png" alt="Donas + Espresso">
+          </figure>
+          <div>
+            <h3>Noche de arándanos</h3>
+            <div>
+              <img src="../multimedia/arandanos2.png" alt="Donas de arándanos">
+              <p>Donas + Espresso</p>
+            </div>
+            <div class="precio-controles">
+              <p class="precio">$9.500</p>
+              <div class="controles-cantidad">
+                <div><p>-</p></div>
+                <div><p>1</p></div>
+                <div><p>+</p></div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- Resumen de compra -->
+      <aside class="carrito-summary">
+        <h3>Resumen de compra</h3>
+        
+        <!-- Formulario de dirección de entrega -->
+        <div class="delivery-form">
+          <h4>Detalles de entrega</h4>
+          <form action="#" method="post" accept-charset="utf-8" novalidate>
+            <div class="input-row">
+              <div class="input-group input-half">
+                <label for="ciudad">Ciudad</label>
+                <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad">
+              </div>
+
+              <div class="input-group input-half">
+                <label for="provincia">Provincia</label>
+                <input type="text" id="provincia" name="provincia" placeholder="Provincia">
+              </div>
+            </div>
+
+            <div class="input-row">
+              <div class="input-group input-half">
+                <label for="direccion">Dirección o lugar de entrega</label>
+                <input type="text" id="direccion" name="direccion" placeholder="Dirección o lugar de entrega">
+              </div>
+
+              <div class="input-group input-half">
+                <label for="departamento">Departamento</label>
+                <input type="text" id="departamento" name="departamento" placeholder="Departamento">
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label for="nombre">Nombre y apellido</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido">
+            </div>
+
+            <div class="input-group">
+              <label for="telefono">Teléfono</label>
+              <input type="text" id="telefono" name="telefono" placeholder="Teléfono">
+            </div>
+          </form>
+        </div>
+
+        <div class="order-summary">
+          <h4>Costo del pedido:</h4>
+          <ul>
+            <li>Productos (3): $20.800</li>
+            <li>Envíos (1): $1.600</li>
+            <li>Descuentos: -</li>
+          </ul>
+          <p>Total: <span>$22.400</span></p>
+        </div>
+
+        <a href="#" class="btn">Confirmar compra</a>
+        <p><a href="../secciones/nuestras-donas.html">Añadir más</a></p>
+      </aside>
+      </div>
+    </div>
+  </main>
+
+
+  <footer>
+    <div class="container footer-container">
+      <!-- Sección superior: logo, información del proyecto, redes sociales -->
+      <div class="footer-top">
+        <div class="footer-logo">
+          <img src="../multimedia/logo-pink.png" alt="Logo Donastra">
+        </div>
+        <div class="footer-info">
+          <p>Diseño Web Final 2025 [DGN4AV]</p>
+          <p>Alumnas: Sofiia Dziuba y Silvina Rossatti</p>
+        </div>
+        <ul class="footer-redes">
+          <li><a href="https://www.instagram.com/"><img src="../multimedia/ig.svg" alt="Logo de instagram"></a></li>
+          <li><a href="https://x.com/"><img src="../multimedia/x.svg" alt="Logo de x"></a></li>
+          <li><a href="https://web.whatsapp.com/"><img src="../multimedia/whatsapp.svg" alt="Logo de whatsapp"></a></li>
+        </ul>
+      </div>
+
+      <!-- Sección inferior: tres columnas -->
+      <div class="footer-bottom">
+        <div class="footer-col contacto">
+          <p>Contacto:</p>
+          <p>Tel: +54 11 2712 27 70</p>
+          <p>Email:</p>
+          <p>donastra@gmail.com</p>
+        </div>
+
+        <div class="footer-col domicilio">
+          <p>Domicilio:</p>
+          <p>Jorge Luis Borges 1975, Cdad. Autónoma de Buenos Aires</p>
+          <a href="https://www.pedidosya.com.ar/"><img src="../multimedia/apps.png" alt="Logos de apps de delivery"></a>
+        </div>
+
+        <div class="footer-col links">
+          <ul>
+            <li><a href="nuestras-donas.html">Nuestras donas</a></li>
+            <li><a href="../index.html">Sobre nosotros</a></li>
+            <li><a href="../index.html">Que obtenés</a></li>
+            <li><a href="novedades.html">Novedades</a></li>
+            <li><a href="locales.html">Locales</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
