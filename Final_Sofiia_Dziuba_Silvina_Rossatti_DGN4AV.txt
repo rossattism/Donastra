@@ -1,0 +1,12 @@
+Carrera: Diseño Gráfico Digital
+Materia: Diseño web
+Comisión: DGN4AV
+Turno: Noche
+Año: 2025
+Cuatrimestre: 4to cuatrimestre
+Docente: Florencia Cristina Coda Sánchez
+Dominio: https://donastra.netlify.app/
+Tipo de entrega: Final virtual
+Alumnas: Sofiia Dziuba y Silvina Rossatti
+
+
