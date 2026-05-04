@@ -6,10 +6,6 @@
 <i> Web Design Final Exam Repository </i> <br />
 </p>
 
-<!-- INTRO: index -->
-<p align="center"> <b>
-</b> </p> 
-
 <!-- ABOUT -->
 ## About
 > Donastra is a web made for the subject "Web Design" in the career Graphic Digital Design in Da Vinci
