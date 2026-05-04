@@ -1,4 +1,30 @@
-# Donastra 🍩
-Donastra is a web made for the subject "Web Design" in the career Graphic Digital Design in Da Vinci.
+<!-- TITLE -->
+<h1 align="center"> Donastra 🍩</h1>
 
+<!-- INTRO: banner, languages and brief description -->
+<p align="center">
+<i> Web Design Final Exam Repository </i> <br />
+</p>
+
+<!-- INTRO: index -->
+<p align="center"> <b>
+<a href="#about"> About </a> • 
+<a href="#header"> Website </a> 
+</b> </p> 
+
+<!-- ABOUT -->
+## About
+> Donastra is a web made for the subject "Web Design" in the career Graphic Digital Design in Da Vinci
+
+<!-- BODY -->
+## Header
 Check the website <a href="https://donastra.netlify.app/">here</a>
+
+<!-- FOOTER -->
+
+---
+<a href="https://www.linkedin.com/in/rossattism/"><img src="https://github.com/gauravghongde/social-icons/blob/master/PNG/White/LinkedIN_white.png?raw=true" alt="Linkedin Logo" style="width: 20px; height: 20px" /></a> &nbsp; &nbsp; 
+<a href="https://github.com/rossattism"><img src="https://github.com/gauravghongde/social-icons/blob/master/PNG/White/Github_white.png?raw=true" alt="GitHub logo" style="width: 20px; height: 20px" /></a> &nbsp; &nbsp; 
+<a href="https://open.spotify.com/user/21bih47uzlxunyyi4gbbvyvty"><img src="https://github.com/gauravghongde/social-icons/blob/master/PNG/White/Spotify_white.png?raw=true" alt="Spotify logo" style="width: 20px; height: 20px" /></a> &nbsp; &nbsp; 
+<a href="mailto:rossattism@gmail.com"><img src="https://github.com/gauravghongde/social-icons/blob/master/PNG/White/Gmail_white.png?raw=true" alt="GMAIL logo" style="width: 20px; height: 20px" /></a> &nbsp;
+<a href="https://shields.io/"><img src="https://img.shields.io/badge/Made with-♥-black" /></a>
