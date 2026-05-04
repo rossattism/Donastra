@@ -8,8 +8,6 @@
 
 <!-- INTRO: index -->
 <p align="center"> <b>
-<a href="#about"> About </a> • 
-<a href="#header"> Website </a> 
 </b> </p> 
 
 <!-- ABOUT -->
@@ -17,7 +15,7 @@
 > Donastra is a web made for the subject "Web Design" in the career Graphic Digital Design in Da Vinci
 
 <!-- BODY -->
-## Header
+## Website
 Check the website <a href="https://donastra.netlify.app/">here</a>
 
 <!-- FOOTER -->
