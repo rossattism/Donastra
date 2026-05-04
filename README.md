@@ -3,7 +3,7 @@
 
 <!-- INTRO: banner, languages and brief description -->
 <p align="center">
-<i> Web Design Final Exam Repository </i> <br />
+<i> Web Design final fxam repository </i> <br />
 </p>
 
 <!-- ABOUT -->
