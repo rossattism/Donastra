@@ -1,0 +1,1675 @@
+/* --- VARIABLES Y RESET --- */
+
+:root {
+    /* Paleta de Colores (desde Figma) */
+    --color-logo: #7756D2; /* Logo, texto, footer, icono (Purple) */
+    --color-primary: #4E3590; /* Título, tabs, icono hover (Dark Purple) */
+    --color-secondary: #ED6DB8; /* Título, texto, footer, btn (Pink) */
+    --color-accent: #F7329D; /* Bloques, btn hover (Bright Pink) */
+    --color-background-soft: #FCD9EC; /* Fondo de bloques (Soft Pink) */
+    --color-background-cards: #FFE5F3; /* Fondo de tarjetas (Light Pink) */
+    --color-text-light: #FCD9EC; /* Fondo de texto (Soft Pink) */
+    --color-background-page: #FFF; /* Fondo principal */
+    --color-text-dark: #7756D2; /* Texto principal (Purple) */
+
+    /* Tipografía (UI Kit) */
+    --font-primary: 'Albert Sans', sans-serif;
+    --font-secondary: 'Tenor Sans', serif;
+
+    /* Tamaños de Fuente (desde Figma) */
+    --h1-size: 90px;    /* Título 1 (Hero) - Albert Sans 700 */
+    --h2-size: 60px;    /* Título 2 - Albert Sans 600 */
+    --h3-size: 34px;    /* Título 3 - Albert Sans 500 */
+    --h4-size: 30px;    /* Título 4 - Albert Sans 500 */
+    --h5-size: 26px;    /* Título 5 (card titles) - Tenor Sans 400 */
+    --p-regular-size: 22px; /* Texto principal regular - Albert Sans 400 */
+    --p-light-size: 17px;   /* Descripción, tips light - Albert Sans 300 */
+    --btn-text-size: 20px;  /* Botón (texto) - Albert Sans 500 */
+    --btn-icon-size: 20px;  /* Botón (con iconos) */
+    --link-nav-size: 26px; /* Título 5 (en navegación) */
+
+    /* Espaciado */
+    --spacing-xs: 10px;
+    --spacing-s: 20px;
+    --spacing-m: 40px;
+    --spacing-l: 80px;
+    --spacing-xl: 120px;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Desplazamiento suave para enlaces de anclaje */
+    scroll-padding-top: 80px; /* Margen superior al desplazarse a anclas considerando el header */
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    background-color: var(--color-background-page);
+}
+
+/* Contenedor general para limitar el ancho y centrar */
+.container {
+    max-width: 1200px; /* Ancho del contenedor principal según UI Kit */
+    margin: 0 auto;
+    padding: 0 var(--spacing-s);
+}
+
+/* Header container - sin limitación de ancho para el logo en la esquina */
+header .container {
+    max-width: 100%;
+    padding: 0 var(--spacing-s);
+    width: 100%;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.header-container .logo a {
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+}
+
+.header-container .logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+/* Estilos de Enlaces y Listas */
+a {
+    text-decoration: none;
+    color: var(--color-secondary);
+    transition: color 0.3s, background-color 0.3s;
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- TIPOGRAFÍA --- */
+
+/* Títulos principales (desde Figma) */
+h1 {
+    font-family: var(--font-secondary);
+    font-size: var(--h2-size); /* Usamos H2 para el logo en Header */
+    color: var(--color-logo);
+    font-weight: 400; /* Regular */
+}
+/* Título 1 - Banner Home */
+h2 {
+    font-size: var(--h1-size);
+    font-weight: 700; /* Bold - Albert Sans 700 */
+    color: var(--color-primary);
+    line-height: 1.11; /* desde Figma */
+    letter-spacing: -0.04em; /* -4% desde Figma */
+}
+
+/* Título 2 - Encabezado de sección */
+.sabores h2 {
+    font-size: var(--h2-size);
+    font-weight: 600; /* Semi-bold - Albert Sans 600 desde Figma */
+    color: var(--color-secondary);
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0; /* Sin margen inferior, el subtítulo está cerca */
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+}
+
+.que-obtenes .texto h2 {
+    font-size: 48px; /* Reducido de 60px */
+    font-weight: 700; /* Bold */
+    color: var(--color-secondary);
+    text-align: left;
+    width: auto;
+    margin-top: 0;
+    margin-bottom: 12px; /* Reducido */
+    line-height: 1.1;
+}
+
+.novedad .texto h2 {
+    font-size: 48px; /* Reducido de 60px */
+    font-weight: 700; /* Bold */
+    color: var(--color-secondary);
+    text-align: left;
+    width: auto;
+    margin-top: 0;
+    margin-bottom: 12px;
+    line-height: 1.1;
+}
+
+.novedad h2 {
+    font-size: var(--h2-size);
+    font-weight: 600; /* Semi-bold */
+    color: var(--color-secondary);
+    text-align: center;
+    width: 100%;
+    margin-bottom: var(--spacing-m);
+}
+
+/* Título 2 específico para Sobre nosotros - alineado a la izquierda */
+.sobre-nosotros .texto h2 {
+    font-size: 48px; /* Reducido de 60px */
+    font-weight: 700; /* Bold */
+    color: var(--color-secondary);
+    text-align: left;
+    width: auto;
+    margin-top: 0; /* Sin margen superior para alineación con imagen */
+    margin-bottom: 12px; /* Reducido de 20px */
+    line-height: 1.1; /* Reducido line-height */
+}
+
+/* Título 3 - Descripción después de T2/T1 */
+h3 {
+    font-size: var(--h3-size);
+    font-weight: 500; /* Medium - Albert Sans 500 desde Figma */
+    color: var(--color-primary);
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+}
+
+/* Título 3 específico para Sobre nosotros */
+.sobre-nosotros .texto h3 {
+    font-size: 28px; /* Reducido de 34px */
+    font-weight: 700; /* Bold */
+    color: var(--color-primary);
+    margin-bottom: 16px; /* Reducido de 40px */
+    text-align: left;
+    line-height: 1.2; /* Reducido line-height */
+}
+
+/* Título 4 - Título principal de tarjeta/sección */
+.sabores article h3 {
+    font-size: var(--h5-size); /* 26px desde Figma - Tenor Sans 400 */
+    font-family: var(--font-secondary); /* Tenor Sans desde Figma */
+    font-weight: 400; /* Regular */
+    color: var(--color-text-dark);
+    margin-bottom: var(--spacing-s);
+    line-height: 1.18;
+    letter-spacing: -0.04em;
+}
+
+/* Título 3 específico para Novedad */
+.novedad .texto h3 {
+    font-size: 28px; /* Reducido de 34px */
+    font-weight: 700; /* Bold */
+    color: var(--color-primary);
+    margin-bottom: 12px;
+    text-align: left;
+    line-height: 1.2;
+}
+
+/* Título 3 específico para Qué obtenés */
+.que-obtenes .texto h3 {
+    font-size: 28px; /* Reducido de 34px */
+    font-weight: 700; /* Bold */
+    color: var(--color-primary);
+    margin-bottom: 12px; /* Reducido */
+    text-align: left;
+    line-height: 1.2;
+}
+
+/* Texto principal regular */
+p {
+    font-size: var(--p-regular-size);
+    font-weight: 400; /* Regular - Albert Sans 400 desde Figma */
+    margin-bottom: var(--spacing-s);
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+}
+
+/* Descripción/Tips Light */
+.sabores article p, .que-obtenes ul li, .sabores .subtitulo {
+    font-size: var(--p-light-size); /* 17px desde Figma */
+    font-weight: 300; /* Light - Albert Sans 300 desde Figma */
+    color: var(--color-text-dark);
+    line-height: 1.41;
+    letter-spacing: -0.04em;
+}
+
+.sabores .subtitulo {
+    text-align: center;
+    margin-top: var(--spacing-xs); /* Espacio pequeño después del H2 */
+    margin-bottom: var(--spacing-l);
+    color: var(--color-primary); /* Dark purple como en el prototipo */
+    font-weight: 500; /* Albert Sans 500 desde Figma */
+    font-size: var(--h3-size); /* 34px desde Figma */
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+}
+
+/* Título 5 - Links de Navegación */
+header nav ul li a, footer .links ul li a {
+    font-size: var(--link-nav-size);
+    font-weight: 400; /* Regular */
+    color: var(--color-logo);
+}
+
+/* --- BOTONES (BTN) --- */
+
+.btn {
+    display: inline-flex;
+    padding: 17px; /* desde Figma */
+    background-color: var(--color-secondary);
+    color: var(--color-background-page); /* Texto en color blanco/fondo */
+    text-align: center;
+    font-size: var(--btn-text-size); /* 20px desde Figma */
+    font-weight: 500; /* Albert Sans 500 desde Figma */
+    border-radius: 20px; /* desde Figma */
+    border: none;
+    transition: all 0.3s;
+    margin-top: calc(var(--spacing-s) * 0.8); /* Subido 20% (reducido 20%) */
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    min-height: 60px; /* desde Figma */
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* desde Figma */
+}
+
+.btn:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-background-page);
+    transform: translateY(-2px);
+}
+
+
+/* --- HEADER --- */
+header {
+    background-color: var(--color-background-soft);
+    padding: var(--spacing-s) 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul {
+    display: flex;
+    gap: var(--spacing-m);
+    align-items: center;
+}
+
+header nav ul li a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+header nav ul li a img {
+    width: 28px; /* Aumentado desde 20px para mejor visibilidad */
+    height: 28px; /* Aumentado desde 20px para mejor visibilidad */
+}
+
+/* --- MAIN --- */
+main {
+    padding-bottom: 0;
+}
+
+/* Estilos de sección general con fondo suave */
+.sobre-nosotros, .que-obtenes, .novedad {
+    background-color: var(--color-background-soft);
+    position: relative; /* Para la superposición correcta del footer-transition */
+}
+
+/* --- SECCIÓN HERO (INDEX) --- */
+
+.hero {
+    background-color: var(--color-background-soft); /* Fondo rosado como en otras secciones */
+    padding: calc(var(--spacing-m) * 0.5) 0; /* Reducido 50% */
+    color: var(--color-background-page); /* Texto blanco */
+    min-height: calc(100vh - 100px); /* Altura de pantalla menos header */
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 0;
+    background-color: #7756D2; /* Color cambiado a #7756D2 */
+    border-radius: 40px; /* desde Figma */
+    padding: 0;
+    overflow: hidden; /* Para que la imagen no se salga de los límites */
+    max-height: calc(100vh - 140px); /* Altura máxima considerando header y padding */
+}
+
+.hero-texto {
+    flex: 1;
+    flex-basis: 50%;
+    max-width: 50%;
+    padding: var(--spacing-xl) var(--spacing-l);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-texto h2 {
+    color: var(--color-background-page); /* Título 1 en blanco */
+    font-size: var(--h1-size); /* 90px desde Figma */
+    font-weight: 700; /* Albert Sans 700 desde Figma */
+    line-height: 1.11; /* desde Figma */
+    letter-spacing: -0.04em;
+    margin-bottom: var(--spacing-s);
+}
+
+.hero-texto p {
+    font-size: var(--h4-size); /* 30px desde Figma */
+    font-weight: 500; /* Albert Sans 500 desde Figma */
+    color: var(--color-background-page);
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    margin-bottom: var(--spacing-l);
+}
+
+.hero-texto .btn {
+    align-self: flex-start;
+    margin-top: 0;
+}
+
+.hero-imagen {
+    flex: 1;
+    flex-basis: 50%;
+    max-width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 0 40px 40px 0; /* Redondeado solo a la derecha desde Figma */
+}
+
+.hero-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- SECCIONES DE CONTENIDO (SOBRE NOSOTROS, QUÉ OBTENÉS, NOVEDAD) --- */
+
+.sobre-nosotros {
+    padding: calc(var(--spacing-m) * 0.5) 0; /* Reducido 50% */
+}
+
+.novedad-container {
+    display: flex;
+    flex-direction: row; /* Imagen a la izquierda, texto a la derecha */
+    align-items: stretch; /* Estira elementos a la misma altura */
+    gap: var(--spacing-l);
+    padding: calc(var(--spacing-xl) * 0.5) 0; /* Reducido 50% */
+}
+
+.obtenes-container {
+    display: flex;
+    align-items: stretch; /* Estira elementos a la misma altura */
+    gap: var(--spacing-l);
+    padding: calc(var(--spacing-xl) * 0.5) 0; /* Reducido 50% */
+}
+
+/* Ajuste para que la imagen vaya primero en "Sobre nosotros" (wireframe) */
+.sobre-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: stretch; /* Estira elementos a la misma altura */
+    gap: var(--spacing-l);
+    padding: calc(var(--spacing-m) * 0.5) 0; /* Reducido 50% */
+}
+
+.sobre-container .texto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.sobre-container .imagen {
+    flex: 1;
+    align-self: stretch; /* Estira a la altura completa */
+}
+
+.obtenes-container .texto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.obtenes-container .imagen {
+    flex: 1;
+    align-self: stretch;
+}
+
+.novedad-container .texto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.novedad-container .imagen {
+    flex: 1;
+    align-self: stretch;
+}
+
+/* Estilos específicos para texto en sección Sobre nosotros */
+.sobre-nosotros .texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    padding-top: 0;
+    margin-top: 0;
+    overflow: visible; /* Permite que el texto sea visible */
+    align-self: center; /* Centra el contenedor de texto */
+}
+
+.sobre-nosotros .texto p {
+    font-size: var(--p-regular-size); /* 22px desde Figma */
+    font-weight: 400; /* Albert Sans 400 desde Figma */
+    color: var(--color-text-dark);
+    line-height: 1.2; /* desde Figma */
+    letter-spacing: -0.04em;
+    margin-bottom: 14px;
+    text-align: left;
+}
+
+.sobre-nosotros .texto p:last-child {
+    margin-bottom: 0;
+}
+
+.sobre-nosotros .imagen {
+    display: flex;
+    align-items: center; /* Centra la imagen verticalmente */
+    justify-content: center;
+    padding-top: 0;
+    margin-top: 0;
+    overflow: hidden;
+    align-self: center; /* Centra el contenedor de imagen */
+}
+
+.sobre-nosotros .imagen img {
+    width: 100%;
+    height: auto; /* Altura natural determina la altura del contenedor */
+    display: block;
+    margin-top: 0;
+    border-radius: 20px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.imagen img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.que-obtenes .texto ul {
+    list-style: disc;
+    padding-left: 25px;
+}
+
+.que-obtenes .texto ul li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.que-obtenes .texto span {
+    color: var(--color-secondary);
+}
+
+.que-obtenes .texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    padding-top: 0;
+    margin-top: 0;
+    overflow: visible;
+    align-self: center;
+}
+
+.que-obtenes .texto h2 {
+    margin-top: 0;
+}
+
+.que-obtenes .texto p {
+    font-size: var(--p-regular-size); /* 22px desde Figma */
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    margin-bottom: 12px;
+}
+
+.que-obtenes .texto .lista-titulo {
+    font-size: 18px; /* Reducido */
+    font-weight: 400;
+    color: var(--color-primary);
+    margin-bottom: 8px; /* Reducido */
+    margin-top: 8px; /* Reducido */
+}
+
+.que-obtenes .texto ul li {
+    font-size: var(--p-regular-size); /* 22px desde Figma */
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    margin-bottom: 8px;
+}
+
+.que-obtenes .imagen {
+    display: flex;
+    align-items: center; /* Centra la imagen verticalmente */
+    justify-content: center;
+    padding-top: 0;
+    margin-top: 0;
+    overflow: hidden;
+    align-self: center;
+}
+
+.que-obtenes .imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    display: block;
+    margin-top: 0;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Estilos específicos para texto en sección Novedad */
+.novedad {
+    position: relative; /* Para el posicionamiento correcto del z-index */
+    z-index: 1; /* La sección debe estar sobre la imagen de transición */
+}
+
+.novedad .texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    padding-top: 0;
+    margin-top: 0;
+    overflow: visible;
+    align-self: center;
+}
+
+.novedad .texto p {
+    font-size: var(--p-regular-size); /* 22px desde Figma */
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+.novedad .container:last-child {
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    position: relative; /* Para el posicionamiento correcto sobre la imagen */
+    z-index: 2; /* El botón debe estar sobre la imagen de transición */
+}
+
+.novedad .container:last-child .btn {
+    margin-top: 0;
+    position: relative; /* Para la visualización correcta */
+    z-index: 2; /* Botón sobre la imagen */
+}
+
+.novedad .imagen {
+    display: flex;
+    align-items: center; /* Centra la imagen verticalmente */
+    justify-content: center;
+    padding-top: 0;
+    margin-top: 0;
+    overflow: hidden;
+    align-self: center;
+}
+
+.novedad .imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    display: block;
+    margin-top: 0;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* --- SECCIÓN SABORES (INDEX) --- */
+
+.sabores {
+    padding: calc(var(--spacing-xl) * 0.5) 0; /* Reducido 50% */
+    text-align: center;
+    background-color: var(--color-background-soft); /* Fondo como otras secciones */
+}
+
+.sabores-grid {
+    display: flex;
+    flex-wrap: nowrap; /* 4 tarjetas en fila sin salto */
+    justify-content: space-between;
+    gap: var(--spacing-m); /* 40px entre tarjetas */
+    margin-bottom: calc(var(--spacing-l) * 0.8); /* Subido 20% (reducido 20%) */
+}
+
+.sabores-grid article {
+    flex: 1; /* Distribución uniforme - cada tarjeta ocupa una parte igual */
+    min-width: 0; /* Permite que las tarjetas se contraigan */
+    text-align: center;
+    padding: 20px; /* desde Figma */
+    background-color: var(--color-background-cards); /* #FFE5F3 desde Figma */
+    border-radius: 40px; /* desde Figma */
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px; /* desde Figma */
+}
+
+.sabores-grid article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.sabores-grid article .imagen-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: var(--spacing-s);
+}
+
+.sabores-grid article img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    border-radius: 50%; /* Para darle forma redonda a la dona */
+    display: block;
+    margin: 0 auto;
+}
+
+.sabores-grid article .rating {
+    position: absolute;
+    top: 20px; /* desde Figma */
+    right: 20px; /* desde Figma */
+    background-color: var(--color-secondary); /* Pink background */
+    color: var(--color-background-page); /* White text */
+    padding: 11px; /* desde Figma */
+    border-radius: 13px; /* desde Figma */
+    font-size: var(--btn-text-size); /* 20px desde Figma */
+    font-weight: 500; /* Albert Sans 500 desde Figma */
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 2.6px; /* desde Figma */
+    min-width: 57px; /* desde Figma */
+    min-height: 27px; /* desde Figma */
+    justify-content: center;
+}
+
+.sabores-grid article h3 {
+    margin-top: 0;
+}
+
+/* --- SECCIÓN NUESTRAS DONAS --- */
+
+.products-page main {
+    padding: var(--spacing-l) 0;
+    background-color: var(--color-background-soft);
+    text-align: center;
+}
+
+.products-page h1 { /* Título de página */
+    font-size: 60px; /* desde Figma style_9A017S */
+    font-weight: 600; /* Albert Sans 600 */
+    color: var(--color-secondary); /* #ED6DB8 desde Figma fill_6V40GD */
+    margin-bottom: 48px; /* reducido 20%: 60px * 0.8 = 48px */
+    line-height: 1.2;
+    letter-spacing: -0.04em; /* -4% */
+}
+
+.products-page section {
+    margin-bottom: 60px; /* gap desde Figma layout_EB35DA */
+}
+
+/* Removemos padding del contenedor para secciones de productos */
+.products-page section .container {
+    padding: 0;
+    max-width: 1200px; /* ancho desde Figma */
+}
+
+/* Títulos de sección (Primaverales, Especiales, etc.) */
+.products-page section h2 {
+    font-size: 34px; /* desde Figma style_6C3REA */
+    font-weight: 500; /* Albert Sans 500 */
+    color: var(--color-primary); /* #4E3590 desde Figma fill_IKYA96 */
+    margin-bottom: 32px; /* gap desde layout_UFMHH9 */
+    margin-top: 0;
+    text-align: center;
+    line-height: 1.2;
+    letter-spacing: -0.04em; /* -4% */
+    padding: 0 20px; /* добавляем padding для заголовков, чтобы они не прилипали к краям */
+}
+
+/* Заголовок "Nuestros combos" - такой же стиль как "Nuestras donas" */
+.products-page section:last-of-type h2 {
+    font-size: 60px; /* desde Figma style_9A017S - такой же как "Nuestras donas" */
+    font-weight: 600; /* Albert Sans 600 */
+    color: var(--color-secondary); /* #ED6DB8 desde Figma fill_6V40GD */
+    line-height: 1.2;
+    letter-spacing: -0.04em; /* -4% */
+}
+
+.products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 26px; /* уменьшено с 28px для размещения 4 карточек: 280*4 + 26*3 = 1198px < 1200px */
+    max-width: 1200px; /* ширина контейнера desde Figma */
+    margin: 0 auto;
+    padding: 0; /* removemos padding para ubicación exacta de 4 tarjetas */
+}
+
+/* Card de producto en Nuestras Donas */
+.products-page article {
+    width: 280px; /* desde Figma layout_IT1RDS */
+    flex: 0 0 280px; /* фиксированная ширина для точного размещения */
+    padding: 20px; /* desde Figma layout_IT1RDS */
+    background-color: var(--color-background-cards); /* #FFE5F3 desde Figma fill_T709CX */
+    border-radius: 40px; /* desde Figma */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px; /* desde Figma layout_IT1RDS */
+    box-shadow: none; /* убраны тени */
+    min-height: 478px; /* desde Figma layout_IT1RDS - фиксированная высота для выравнивания кнопок */
+}
+
+/* Карточки комбо без описания - убираем фиксированную высоту */
+.products-page section:last-of-type article {
+    min-height: auto; /* убираем фиксированную высоту для комбо */
+}
+
+.products-page article figure {
+    position: relative;
+    margin-bottom: 0; /* gap управляет отступами */
+    width: 175px; /* desde Figma layout_PFP5YW */
+    height: 183px; /* desde Figma layout_PFP5YW */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.products-page article figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0; /* без скругления для изображений */
+    object-fit: contain;
+}
+
+.products-page article h3 {
+    font-size: 26px; /* desde Figma style_214OD9 */
+    font-family: var(--font-secondary); /* Tenor Sans */
+    font-weight: 400; /* Regular */
+    color: var(--color-text-dark); /* #7756D2 desde Figma fill_DF4GSI */
+    margin-bottom: 0; /* gap управляет отступами */
+    line-height: 1.177; /* desde Figma style_214OD9 */
+    letter-spacing: -0.04em; /* -4% */
+    text-align: center;
+}
+
+.products-page article p:nth-of-type(1) { /* Descripción */
+    font-size: 17px; /* desde Figma style_10EC4J */
+    font-weight: 300; /* Albert Sans 300 */
+    color: var(--color-text-dark); /* #7756D2 desde Figma fill_DF4GSI */
+    line-height: 1.412; /* desde Figma style_10EC4J */
+    letter-spacing: -0.04em; /* -4% */
+    min-height: 50px; /* desde Figma layout_LUWJP1 */
+    margin-bottom: 0; /* gap управляет отступами */
+    text-align: center;
+}
+
+.products-page article p:nth-of-type(2) { /* Precio */
+    font-size: 22px; /* desde Figma style_20G2D0 */
+    font-weight: 500; /* Albert Sans 500 */
+    color: var(--color-text-dark); /* #7756D2 desde Figma fill_DF4GSI */
+    margin-bottom: 0; /* gap управляет отступами */
+    line-height: 1.391; /* desde Figma style_20G2D0 */
+    letter-spacing: -0.04em; /* -4% */
+    text-align: center; /* центрируем цену в карточке */
+}
+
+/* Botón en las tarjetas de productos */
+.products-page article .btn {
+    width: 240px; /* desde Figma layout_GGIKIS */
+    height: 60px; /* desde Figma layout_GGIKIS */
+    padding: 17px; /* desde Figma layout_GGIKIS */
+    gap: 10px; /* desde Figma layout_GGIKIS */
+    margin-top: auto; /* выравниваем кнопку по нижнему краю карточки */
+    border-radius: 20px; /* desde Figma */
+    font-size: var(--btn-text-size); /* 20px */
+    font-weight: 500; /* Albert Sans 500 */
+}
+
+/* Texto descriptivo en sección Combos */
+.products-page section p:not(.products-page article p) {
+    font-size: 34px; /* desde Figma style_6C3REA - mismo estilo que h2 */
+    font-weight: 500; /* Albert Sans 500 */
+    color: var(--color-primary); /* #4E3590 */
+    text-align: center;
+    line-height: 1.2;
+    letter-spacing: -0.04em; /* -4% */
+    margin-bottom: 32px; /* gap desde layout_UFMHH9 */
+}
+
+/* Modificación necesaria para agrupar las tarjetas */
+.products-page section:nth-of-type(1) .products-grid,
+.products-page section:nth-of-type(2) .products-grid,
+.products-page section:nth-of-type(3) .products-grid,
+.products-page section:nth-of-type(4) .products-grid,
+.products-page section:nth-of-type(5) .products-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 26px; /* уменьшено с 28px для размещения 4 карточек */
+    padding: 0; /* removemos padding para ubicación exacta de 4 tarjetas */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Arreglo para el título h11 en nuestra-donas.html */
+h11 {
+    display: block;
+    font-size: var(--h2-size);
+    font-weight: 600;
+    color: var(--color-secondary);
+    margin: var(--spacing-l) 0;
+}
+.products-page main h11 {
+    font-size: var(--h1-size);
+    color: var(--color-primary);
+}
+
+
+/* --- SECCIÓN CARRITO (TU-CARRITO) --- */
+
+.carrito-main {
+    background-color: var(--color-background-soft);
+    padding: var(--spacing-m) 0;
+    min-height: 100vh;
+    padding-bottom: var(--spacing-l);
+}
+
+.carrito-layout {
+    display: flex;
+    gap: var(--spacing-l);
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.carrito-container {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-l);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.carrito-products {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-s);
+}
+
+.carrito-summary {
+    flex: 1;
+    padding: var(--spacing-m);
+    background-color: var(--color-background-cards);
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(119, 86, 210, 0.08);
+    align-self: flex-start;
+    min-width: 350px;
+}
+
+.carrito-summary h3 {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--color-primary);
+    text-align: left;
+    margin-bottom: var(--spacing-m);
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+}
+
+.carrito-summary h4 {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--color-primary);
+    text-align: left;
+    margin-bottom: var(--spacing-s);
+    margin-top: var(--spacing-m);
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+}
+
+.carrito-summary h4:first-of-type {
+    margin-top: 0;
+}
+
+/* Formulario de entrega */
+.delivery-form {
+    margin-bottom: var(--spacing-m);
+    padding: var(--spacing-s) 0;
+}
+
+.delivery-form .input-row {
+    display: flex;
+    gap: var(--spacing-s);
+    margin-bottom: var(--spacing-s);
+}
+
+.delivery-form .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--spacing-s);
+}
+
+.delivery-form .input-group.input-half {
+    flex: 1;
+    min-width: 0;
+}
+
+.delivery-form .input-row .input-group {
+    margin-bottom: 0;
+}
+
+.delivery-form label {
+    display: none;
+}
+
+.delivery-form input {
+    padding: 12px 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: var(--p-light-size);
+    font-family: var(--font-primary);
+    color: var(--color-text-dark);
+    width: 100%;
+    background-color: var(--color-background-page);
+    transition: box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.delivery-form input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(237, 109, 184, 0.1);
+}
+
+.delivery-form input::placeholder {
+    color: #a0a0a0;
+    font-style: italic;
+}
+
+/* Resumen del pedido */
+.order-summary {
+    margin-top: var(--spacing-m);
+    padding-top: 0;
+    border-top: none;
+}
+
+.order-summary ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--spacing-s);
+}
+
+.order-summary ul li {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--p-light-size);
+    color: var(--color-text-dark);
+    margin-bottom: var(--spacing-xs);
+}
+
+.order-summary > p {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--p-regular-size);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-top: var(--spacing-s);
+    margin-bottom: var(--spacing-m);
+}
+
+.order-summary p span {
+    font-size: var(--h3-size);
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.carrito-summary .btn {
+    width: 100%;
+    text-align: center;
+    margin-top: var(--spacing-m);
+    margin-bottom: var(--spacing-s);
+}
+
+.carrito-summary > p:last-child {
+    text-align: center;
+    margin-top: var(--spacing-s);
+    margin-bottom: 0;
+    width: 100%;
+    display: block;
+}
+
+.carrito-summary > p:last-child a {
+    color: var(--color-logo);
+    font-size: var(--p-regular-size);
+    font-weight: 500;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.carrito-summary > p:last-child a:hover {
+    color: var(--color-secondary);
+}
+
+/* Títulos del Carrito */
+.carrito-main h2 {
+    font-size: var(--h2-size);
+    font-weight: 600;
+    font-family: var(--font-secondary);
+    color: var(--color-secondary);
+    text-align: center;
+    margin-bottom: var(--spacing-s);
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+}
+
+.carrito-main h3 {
+    font-size: var(--h3-size);
+    font-weight: 500;
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: var(--spacing-l);
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+}
+
+.carrito-products h3 {
+    font-size: var(--h4-size);
+    font-weight: 500;
+    color: var(--color-primary);
+    text-align: left;
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Tarjeta de producto en carrito */
+.carrito-products article {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-m);
+    background-color: var(--color-background-cards);
+    padding: var(--spacing-m);
+    border-radius: 20px;
+    
+    
+}
+
+.carrito-products article:hover {
+    
+}
+
+.carrito-products article figure {
+    width: 140px;
+    height: 140px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.carrito-products article figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.carrito-products article > div {
+    flex: 1;
+}
+
+.carrito-products article h3 {
+    text-align: left;
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--h5-size);
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    color: var(--color-text-dark);
+    line-height: 1.2;
+}
+
+.carrito-products article p:nth-of-type(1) {
+    font-size: var(--p-light-size);
+    font-weight: 300;
+    color: var(--color-text-dark);
+    line-height: 1.4;
+}
+
+.carrito-products article p:nth-of-type(2) {
+    font-size: var(--p-regular-size);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-s);
+}
+
+/* Contenedor para precio y botones en una línea */
+.precio-controles {
+    display: flex;
+    align-items: center;
+    margin-top: var(--spacing-s);
+    margin-bottom: 0;
+    gap: 9px;
+}
+
+.precio-controles .precio {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--color-primary);
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
+    line-height: 1.391;
+    letter-spacing: -0.04em;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+/* Estilos para los botones de cantidad */
+.controles-cantidad {
+    display: flex;
+    width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: var(--color-background-page);
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+.controles-cantidad div {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-accent);
+    background-color: var(--color-background-page);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    user-select: none;
+    
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    line-height: 1;
+}
+
+.controles-cantidad div p {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-size: 18px;
+    text-align: center;
+}
+
+.controles-cantidad div:hover {
+    background-color: var(--color-background-soft);
+}
+
+.controles-cantidad div:nth-child(2) {
+    background-color: var(--color-background-page);
+    color: var(--color-accent);
+}
+
+.controles-cantidad div:nth-child(2):hover {
+    background-color: var(--color-background-soft);
+}
+
+/* Resumen de compra */
+.carrito-summary h3 {
+    font-size: var(--h4-size);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-s);
+    text-align: left;
+}
+
+.carrito-summary ul {
+    border-top: none;
+    border-bottom: none;
+    padding: 0;
+    margin: var(--spacing-s) 0;
+}
+
+.carrito-summary ul li {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--p-regular-size);
+    margin-bottom: var(--spacing-xs);
+}
+
+.carrito-summary p span {
+    font-size: var(--h3-size);
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+
+.carrito-summary a.btn {
+    width: 100%;
+    display: block;
+    margin-top: 0;
+}
+
+
+/* Ajuste al HTML del Carrito (Formulario y estructura) */
+.carrito-page main {
+    display: flex;
+    flex-direction: column;
+}
+
+.carrito-page h2 {
+    margin-top: var(--spacing-m);
+}
+
+.carrito-page main > h3 { /* Subtítulo principal */
+    font-size: var(--h4-size);
+    font-weight: 500;
+    color: var(--color-secondary);
+    text-align: center;
+    margin-bottom: var(--spacing-l);
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-l);
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+/* Reestructuración para el layout del carrito según el wireframe
+El HTML tiene 2 secciones y 1 aside. Necesitamos envolverlas en el main-content
+para el layout de dos columnas */
+.tu-carrito-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-m);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-background-soft);
+}
+
+.tu-carrito-main > h2 {
+    text-align: center;
+    font-size: var(--h2-size);
+    font-weight: 600;
+    color: var(--color-secondary);
+    margin-top: 0;
+    margin-bottom: var(--spacing-s);
+}
+
+.tu-carrito-main > h3 {
+    text-align: center;
+    font-size: var(--h4-size);
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xl);
+}
+
+.tu-carrito-content {
+    display: flex;
+    gap: var(--spacing-l);
+    align-items: flex-start;
+}
+
+.tu-carrito-content section { /* Lista de productos */
+    flex: 2;
+}
+
+.tu-carrito-content aside { /* Resumen */
+    flex: 1;
+    padding: var(--spacing-m);
+    background-color: var(--color-background-page);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.tu-carrito-content aside .input-group {
+    display: flex;
+    gap: var(--spacing-s);
+    margin-bottom: var(--spacing-s);
+}
+
+.tu-carrito-content aside .input-group input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--color-logo);
+    border-radius: 10px;
+    font-size: var(--p-regular-size);
+}
+
+.tu-carrito-content aside .input-group label {
+    display: none;
+}
+
+.tu-carrito-content aside h3 {
+    font-size: var(--h3-size);
+    font-weight: 600;
+    color: var(--color-primary);
+    text-align: left;
+    margin-bottom: var(--spacing-s);
+}
+
+.tu-carrito-content aside ul {
+    border-top: 1px solid var(--color-logo);
+    border-bottom: 1px solid var(--color-logo);
+    padding: var(--spacing-s) 0;
+    margin: var(--spacing-s) 0;
+}
+
+.tu-carrito-content aside ul li {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--p-regular-size);
+}
+
+.tu-carrito-content aside p span {
+    font-size: var(--h3-size);
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.tu-carrito-content aside a {
+    display: block;
+    width: 100%;
+}
+
+.tu-carrito-content aside a.btn {
+    text-transform: uppercase;
+    font-size: var(--btn-icon-size);
+    margin-top: var(--spacing-s);
+}
+
+.tu-carrito-content aside p a {
+    text-align: center;
+    margin-top: var(--spacing-s);
+    font-size: var(--p-regular-size);
+}
+
+/* Estilos de los inputs de dirección */
+/* La estructura HTML de tu carrito tiene un formulario más simple que el wireframe */
+/* Para reflejar el wireframe (inputs de Ciudad, Provincia, etc.) y tener el formulario
+y el resumen en la columna de la derecha, se requiere un pequeño ajuste al HTML.
+
+Asumiendo que has ajustado el HTML para incluir el formulario dentro del aside 
+o que el aside está solo en el wireframe final y el HTML que enviaste tiene una estructura diferente
+que voy a ignorar para priorizar el layout del Wireframe 3: */
+
+/* Estilos de las Donas en Carrito */
+.tu-carrito-content section article {
+    display: flex;
+    gap: var(--spacing-m);
+    align-items: center;
+    background-color: var(--color-background-page);
+    padding: var(--spacing-s);
+    border-radius: 15px;
+    margin-bottom: var(--spacing-s);
+}
+
+.tu-carrito-content section article figure {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+}
+
+.tu-carrito-content section article figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.tu-carrito-content section article > div {
+    flex-grow: 1;
+}
+
+.tu-carrito-content section article h3 {
+    font-size: var(--p-regular-size);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+    text-align: left;
+}
+
+.tu-carrito-content section article p:nth-of-type(1) {
+    font-size: var(--p-light-size);
+    font-weight: 300;
+    margin-bottom: var(--spacing-s);
+}
+
+.tu-carrito-content section article p:nth-of-type(2) {
+    font-size: var(--h4-size);
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+/* Contador en Carrito */
+.tu-carrito-content section article > div > div {
+    display: flex;
+    width: 120px;
+    border: 2px solid var(--color-secondary);
+    border-radius: 50px;
+    overflow: hidden;
+    margin-top: var(--spacing-xs);
+    margin-left: auto;
+}
+
+.tu-carrito-content section article > div > div div {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--btn-icon-size);
+    font-weight: 600;
+    color: var(--color-secondary);
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.tu-carrito-content section article > div > div div:nth-child(2) {
+    background-color: var(--color-secondary);
+    color: var(--color-background-page);
+}
+
+/* Ajustes para el tercer artículo (Combo) */
+.tu-carrito-content section article:nth-child(3) > div > div:nth-child(1) {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-s);
+}
+
+.tu-carrito-content section article:nth-child(3) > div > div:nth-child(1) img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.tu-carrito-content section article:nth-child(3) > div > div:nth-child(1) p {
+    font-size: var(--p-light-size);
+    font-weight: 400;
+    margin: 0;
+}
+
+/* --- TRANSICIÓN AL FOOTER --- */
+
+.footer-transition {
+    width: 100%;
+    margin: 0;
+    margin-top: -5vh; /* Накладываем фото на блок выше примерно на 10% от высоты изображения */
+    margin-bottom: 0; /* Убираем пространство между изображением и footer */
+    padding: 0;
+    overflow: hidden; /* Скрываем обрезанную часть изображения */
+    position: relative;
+    line-height: 0; /* Убираем белое пространство */
+    display: block;
+    background-color: var(--color-background-soft); /* Фон как у блока выше */
+    z-index: 0; /* Изображение должно быть под кнопкой */
+    height: calc(50vh * 0.9); /* Обрезаем изображение снизу на 10% через высоту контейнера */
+}
+
+.footer-transition img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+    object-position: top center; /* Показываем верхнюю часть изображения */
+}
+
+/* --- FOOTER --- */
+
+footer {
+    background-color: var(--color-primary); /* #4E3590 desde Figma */
+    color: var(--color-text-light);
+    padding: var(--spacing-xl) 0;
+    margin-top: 0; /* Убираем пространство сверху для плотного прилегания к изображению */
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-m);
+}
+
+/* Верхняя секция: логотип, информация, соцсети (центрированная) */
+.footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-s);
+}
+
+.footer-logo {
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-logo img {
+    max-width: 200px;
+    height: auto;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.footer-info p {
+    margin-bottom: 0;
+    color: var(--color-text-light);
+    font-size: var(--p-light-size);
+    font-weight: 300;
+}
+
+.footer-redes {
+    display: flex;
+    gap: var(--spacing-s);
+    justify-content: center;
+    margin-top: var(--spacing-xs);
+}
+
+.footer-redes img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Нижняя секция: три колонки */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-m);
+    margin-top: 0;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 150px;
+}
+
+footer p, footer a {
+    color: var(--color-text-light);
+    font-size: var(--p-light-size);
+    font-weight: 300;
+    margin-bottom: var(--spacing-xs);
+}
+
+footer .domicilio a img {
+    max-width: 180px;
+    margin-top: var(--spacing-s);
+}
+
+footer .links ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer .links ul li {
+    margin-bottom: var(--spacing-xs);
+}
+
+footer .links ul li a {
+    font-size: var(--p-light-size);
+    font-weight: 400;
+    color: var(--color-text-light);
+    line-height: 1.8;
+}
+
+/* Ajustes de Color de Texto en Footer */
+footer h1, footer p, footer a {
+    color: var(--color-text-light);
+}
+
+footer a:hover {
+    color: var(--color-secondary);
+}
